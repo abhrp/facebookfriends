@@ -1,1 +1,1 @@
-include ':FacebookFriends'
+include 'libraries:facebook', ':FacebookFriends'

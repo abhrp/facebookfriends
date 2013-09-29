@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/home/abhiroop/AndroidStudioProjects/FacebookFriendsAndroid/libraries/facebook/res/values-hdpi/dimens.xml -->
+    <dimen name="com_facebook_picker_divider_width">1px</dimen>
+
+</resources>
