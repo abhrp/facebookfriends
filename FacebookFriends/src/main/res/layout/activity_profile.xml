@@ -12,10 +12,10 @@
             android:orientation="horizontal"
             android:weightSum="1.0"
             android:layout_marginTop="80dp">
-            <com.facebook.widget.ProfilePictureView
+            <ImageView
                 android:id="@+id/profilePicView"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_weight="0.5"
                 />
             <LinearLayout
@@ -30,6 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
+                    android:layout_marginLeft="10dp"
                     android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
@@ -43,6 +44,15 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:text="@string/seeFriends"/>
+        <ProgressBar
+            android:id="@+id/profileProgressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.Sherlock.ProgressBar"
+            android:visibility="invisible"
+            />
     </RelativeLayout>
 </ScrollView>
 

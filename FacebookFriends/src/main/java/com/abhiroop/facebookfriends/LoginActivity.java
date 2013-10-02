@@ -55,13 +55,20 @@ public class LoginActivity extends SherlockFragmentActivity implements Session.S
             facebookLoginInProgress = true;
             Log.i(LoginActivity.class.getCanonicalName(), "FACEBOOK LOGGED IN!!!!");
             loginProgressBar.setVisibility(View.VISIBLE);
-            Request.executeMeRequestAsync(session, new Request.GraphUserCallback() {
+            loginButton.setVisibility(View.GONE);
+            Request.newMeRequest(session, new Request.GraphUserCallback() {
                 @Override
                 public void onCompleted(GraphUser user, Response response) {
-                    loginProgressBar.setVisibility(View.INVISIBLE);
-                    Log.e(LoginActivity.class.getCanonicalName(), " Graph User : " + user.toString());
+                    loginProgressBar.setVisibility(View.GONE);
+                    Intent profileIntent = new Intent(LoginActivity.this, ProfileActivity.class);
+                    profileIntent.putExtra("userId", user.getId());
+                    Log.e(LoginActivity.class.getCanonicalName(), " userId : " + user.getId());
+                    profileIntent.putExtra("username", user.getUsername());
+                    profileIntent.putExtra("name", user.getName());
+                    startActivity(profileIntent);
+                    finish();
                 }
-            });
+            }).executeAsync();
         } else if (state.isClosed()) {
             Log.i(LoginActivity.class.getCanonicalName(), "FACEBOOK LOGGED OUTTT!!!!");
         }

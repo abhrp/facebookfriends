@@ -30,4 +30,6 @@ dependencies {
     compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
     compile 'com.android.support:support-v4:18.0.+'
     compile project(':libraries:facebook')
+    compile ('com.nostra13.universalimageloader:universal-image-loader:1.8.6')
+    compile 'com.google.code.gson:gson:2.2.+'
 }
